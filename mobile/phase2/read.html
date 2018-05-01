@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".readmore").hide();
+                $("span.more").click(function(){
+                    $(".readmore").slideDown("slow");
+										$('.less').show();
+                    $(this).hide();
+                });
+								
+								       $("span.less").click(function(){
+                    $(".readmore").slideUp("slow");
+                    $(this).hide();
+										$('.more').delay(1000).show();
+                });
+								
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+        Styles make the formatting job much easier and more efficient.
+        </div>
+        <span class="more">Read More...</span>
+        <div class="readmore">
+        To give an attractive look to web sites, styles are heavily used.
+        JQuery is a powerful JavaScript library that allows us to add dynamic elements to our web
+        sites. Not only it is easy to learn, but it's easy to implement too. A person must have a
+        good knowledge of HTML and CSS and a bit of JavaScript. jQuery is an open source project
+        that provides a wide range of features with cross-platform compatibility.
+				
+				<span class="less">...Less</span>
+        </div>
+    </body>
+</html>
+
+
+
+
+<script type="text/javascript">// <![CDATA[
+hidemobile = "false";
+        onResize = function() {
+            if (jQuery(window).width() < 769) {
+						jQuery('#sales-banner').insertBefore('.main-container');
+						jQuery ('.deals.colm2').remove();
+					jQuery('.newslettercontain').remove().insertAfter('.footerafter .footer-container');
+						
+                jQuery('.readmore').hide();
+                hidemobile = "true";
+                readmore();
+
+            } else {
+                hidemobile = "false";
+                jQuery('.readmore').show();
+                jQuery('.morelink').hide();
+            }
+
+
+        }
+
+        jQuery(document).ready(onResize);
+        jQuery(window).resize(onResize);
+
+        function readmore() {
+            var ellipsestext = "...";
+            var moretext = " ... Read More";
+            var lesstext = " ... Show less";
+						/*
+            jQuery('.readmore').each(function() {
+                var content = jQuery(this).html();
+                var html = content;
+                var read = '<a href="" class="morelink">' + moretext + '</a>'
+
+                jQuery(this).html(html);
+                jQuery('a.morelink').remove();
+                jQuery(this).after(read);
+            });
+						*/
+
+            jQuery(".morelink").click(function() {
+                if (jQuery(this).hasClass("less")) {
+                    jQuery(this).removeClass("less");
+                    jQuery(this).html(moretext);
+                } else {
+                    jQuery(this).addClass("less");
+                    jQuery(this).html(lesstext);
+                }
+                jQuery(this).parent().prev().toggle();
+                jQuery(this).prev().toggle();
+                return false;
+            });
+
+        }
+// ]]></script>
