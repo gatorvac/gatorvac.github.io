@@ -1,0 +1,2 @@
+1) Before - Original without mobile optimzations
+2) phase 1 - add my readmore functionality into text top and bottom content areas (would need to be applied on page by page basis
