@@ -20,9 +20,11 @@
 
 
 <script type="text/javascript">// <![CDATA[
+
 hidemobile = "false";
         onResize = function() {
             if (jQuery(window).width() < 769) {
+						
 						
                 jQuery('.readmore').slideUp();
                 hidemobile = "true";
@@ -33,8 +35,9 @@ hidemobile = "false";
                 jQuery('.morelink').hide();
             }
         }
-        jQuery(document).ready(onResize);
-        jQuery(window).resize(onResize);
+ 
+ jQuery(document).ready(onResize);
+ jQuery(window).resize(onResize);
 	
         function readmore() {
             var moretext = " ...read more";
