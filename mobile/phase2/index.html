@@ -2884,43 +2884,42 @@ function sameHeight(selector) {
 
         /* onbody */
 // ]]></script><script type="text/javascript">// <![CDATA[
+
+
 hidemobile = "false";
         onResize = function() {
             if (jQuery(window).width() < 769) {
+						
+						
 						jQuery('#sales-banner').insertBefore('.main-container');
 						jQuery ('.deals.colm2').remove();
 					jQuery('.newslettercontain').remove().insertAfter('.footerafter .footer-container');
 						
-                jQuery('.readmore').hide();
+                jQuery('.readmore').slideUp();
                 hidemobile = "true";
                 readmore();
-
             } else {
                 hidemobile = "false";
-                jQuery('.readmore').show();
+                jQuery('.readmore').slideDown();
                 jQuery('.morelink').hide();
             }
-
-
         }
-
-        jQuery(document).ready(onResize);
-        jQuery(window).resize(onResize);
-
+ 
+ jQuery(document).ready(onResize);
+ jQuery(window).resize(onResize);
+	
         function readmore() {
-            var ellipsestext = "...";
-            var moretext = " ... Read More";
-            var lesstext = " ... Show less";
+            var moretext = " ...read more";
+            var lesstext = " ...show less";
             jQuery('.readmore').each(function() {
                 var content = jQuery(this).html();
                 var html = content;
                 var read = '<a href="" class="morelink">' + moretext + '</a>'
-
                 jQuery(this).html(html);
                 jQuery('a.morelink').remove();
                 jQuery(this).after(read);
             });
-
+						
             jQuery(".morelink").click(function() {
                 if (jQuery(this).hasClass("less")) {
                     jQuery(this).removeClass("less");
@@ -2929,12 +2928,13 @@ hidemobile = "false";
                     jQuery(this).addClass("less");
                     jQuery(this).html(lesstext);
                 }
-                jQuery(this).parent().prev().toggle();
-                jQuery(this).prev().toggle();
+                 jQuery(this).parent().prev().slideToggle(1000);
+               jQuery(this).prev().slideToggle(1000);
                 return false;
             });
-
         }
+
+
 // ]]></script><script type="text/javascript">// <![CDATA[
 jQuery(document).ready(function() {
 

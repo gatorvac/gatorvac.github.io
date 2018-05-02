@@ -2889,18 +2889,23 @@ function sameHeight(selector) {
 hidemobile = "false";
         onResize = function() {
             if (jQuery(window).width() < 769) {
-						
-						
+					
 						jQuery('#sales-banner').insertBefore('.main-container');
-						jQuery ('.deals.colm2').remove();
-					jQuery('.newslettercontain').remove().insertAfter('.footerafter .footer-container');
+						jQuery ('.deals.colm2').hide();
+					jQuery('.newslettercontain').insertAfter('.footerafter .footer-container');
+											
 						
                 jQuery('.readmore').slideUp();
                 hidemobile = "true";
                 readmore();
             } else {
                 hidemobile = "false";
-                jQuery('.readmore').slideDown();
+								
+										jQuery('#sales-banner').insertBefore('.header-language-background');
+								jQuery ('.deals.colm2').show();
+								jQuery('.newslettercontain').insertBefore('.socialsfooter');
+								
+                jQuery('.readmore').css('display','inline').slideDown();
                 jQuery('.morelink').hide();
             }
         }
@@ -2923,17 +2928,29 @@ hidemobile = "false";
             jQuery(".morelink").click(function() {
                 if (jQuery(this).hasClass("less")) {
                     jQuery(this).removeClass("less");
-                    jQuery(this).html(moretext);
+                    jQuery(this).html(moretext); 
+										jQuery(this).parent().prev().slideUp(1000);
+										jQuery(this).prev().slideUp(1000);
+									
                 } else {
                     jQuery(this).addClass("less");
                     jQuery(this).html(lesstext);
+										jQuery(this).parent().prev().slideDown(400, function() {
+										jQuery('.readmore').css('display','inline');
+}); 
+
+										jQuery(this).prev().slideDown(1000);
+										
+										 
                 }
-                 jQuery(this).parent().prev().slideToggle(1000);
-               jQuery(this).prev().slideToggle(1000);
+            //   jQuery(this).parent().prev().slideToggle(1000);
+         //      jQuery(this).prev().slideToggle(1000);
+							 
+				//			 jQuery('.readmore').css('display','inline');
+							 
                 return false;
             });
-        }
-
+        }	
 
 // ]]></script><script type="text/javascript">// <![CDATA[
 jQuery(document).ready(function() {
