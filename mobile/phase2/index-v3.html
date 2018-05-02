@@ -2895,7 +2895,7 @@ hidemobile = "false";
 					jQuery('.newslettercontain').insertAfter('.footerafter .footer-container');
 											
 						
-         //       jQuery('.readmore').slideUp();
+         //      
                 hidemobile = "true";
                 readmore();
             } else {
@@ -2914,6 +2914,7 @@ hidemobile = "false";
         function readmore() {
             var moretext = " ...read more";
             var lesstext = " ...show less";
+						 jQuery('.readmore').hide();
             jQuery('.readmore').each(function() {
                 var content = jQuery(this).html();
                 var html = content;
@@ -2925,10 +2926,10 @@ hidemobile = "false";
 						
             jQuery(".morelink").click(function() {
                 if (jQuery(this).hasClass("less")) {
-              //      jQuery(this).removeClass("less");
-              //      jQuery(this).html(moretext); 
-						//				jQuery(this).parent().prev().slideUp(1000);
-						//				jQuery(this).prev().slideUp(1000);
+                    jQuery(this).removeClass("less");
+                   jQuery(this).html(moretext); 
+										jQuery(this).parent().prev().slideUp(1000);
+									jQuery(this).prev().slideUp(1000);
 									
                 } else {
                     jQuery(this).addClass("less");
