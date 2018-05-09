@@ -1617,6 +1617,10 @@ max-height:60px;
     }
 	
 
+	
+	
+	
+	
 
 	
 			/* NEW MOBILE */	
@@ -2892,7 +2896,9 @@ hidemobile = "false";
 					
 						jQuery('#sales-banner').insertBefore('.main-container');
 						jQuery ('.deals.colm2').hide();
-					jQuery('.newslettercontain').insertAfter('.footerafter .footer-container');
+					  jQuery('.newslettercontain').insertAfter('.footerafter .footer-container');
+						 jQuery('.homelogolink').insertBefore('.header-language-background');
+						  jQuery('.centerheader').insertBefore('.header-language-background');
 											
 						
          //      
@@ -2901,6 +2907,8 @@ hidemobile = "false";
             } else {
                 hidemobile = "false";
 								jQuery('#sales-banner').insertBefore('.header-language-background');
+								 jQuery('.homelogolink').prependTo('.headertop');
+								 jQuery('.centerheader').insertAfter('.homelogolink');
 								jQuery ('.deals.colm2').show();
 								jQuery('.newslettercontain').insertBefore('.socialsfooter');
                 jQuery('.readmore').css('display','inline').slideDown();
