@@ -49,7 +49,7 @@
 		
 	@import url('https://fonts.googleapis.com/css?family=Cormorant+Unicase|Lora');
 		
-	.page-header-container{display:none;}	
+	.page-header-container,#sales-banner {display:none;}	
 		
 		
 #sales-banner {
@@ -2881,11 +2881,24 @@ var reviewdiv='<div class="reviewdiv"><a class="shopperlink" target="_blank" hre
 
 jQuery('.centerheader').prepend(chatdiv);
 jQuery('.centerheader').append(reviewdiv);
-	 
-	 jQuery('.page-header-container').delay(200).slideDown(500, function() {
-				 jQuery('.centerheader').delay(1000).effect('shake',{times:6},100);
+
+/*
+  jQuery('.page-header-container').delay(1000).effect('drop',{direction:'down',mode:'show',scale:'both'},600, function() {
+	 jQuery('#sales-banner').delay(800).slideDown(1000, function() {
+				 jQuery('.centerheader').delay(1000).effect('shake',{times:3},700);
 		});
+	});
+*/
 	
+  jQuery('#sales-banner').delay(500).effect('drop',{direction:'down',mode:'show',scale:'both'},600, function() {
+	 jQuery('.page-header-container').delay(1000).slideDown(1000, function() {
+				 jQuery('.centerheader').delay(1000).effect('shake',{times:3},300);
+		});
+	});	
+ 
+
+
+ 
  
 //});
 
