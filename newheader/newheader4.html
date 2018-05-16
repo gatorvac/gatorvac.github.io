@@ -53,25 +53,26 @@
 		
 		
 #sales-banner {
+
         text-align: center;
 				background:#514837;
         color: #fff;
         text-transform: uppercase;
 				background:url('newheader_files/sales-header.jpg') center no-repeat;
 				background-size:cover;
-         width: 100%;
+        width: 100%;
        font-family: 'Cormorant Unicase', serif;
 line-height:24px;
 padding:15px 0px 5px 0px;
-
-			 
     }
+
     #sales-banner .firstline {
         font-size: 50px;
         padding: 0px;
         margin: 0px;
 				font-weight:normal;
     }
+
     #sales-banner .secondline {
         font-size: 16px;
         padding: 0px;
@@ -96,10 +97,11 @@ padding:15px 0px 5px 0px;
 
 
 
-<div id="sales-banner">
+<div id="sales-banner" style="display:none;">
+<img id="preloadimage" src="newheader_files/sales-header.jpg" style="display:none;">
 <span class="firstline"><a class="firstline" href="https://www.thinkvacuums.com/tv-sales.html">Biggest Sale Of The Year<br></a></span>
 <a class="secondline" href="https://www.thinkvacuums.com/tv-sales.html">Save Up To 11% On All Central Vacuum Systems * Click Here For Details</a></span>
-<div id="salestimer">Hurry! Only, <span id="timer"></span> Left
+<div id="salestimer" style="display:none;">Hurry! Only, <span id="timer"></span> Left
 </div></div>
 
 <style>
@@ -130,6 +132,10 @@ div#salestimer {
 
 
 <script>
+
+
+
+
 // Set the date we're counting down to
 var countDownDate = new Date("May 20, 2018 00:00:00").getTime();
 
@@ -3072,6 +3078,9 @@ padding:20px 5px 20px 5px !important;
 
 <script type="text/javascript">// <![CDATA[
 
+   
+
+
 // remove and update classes
 jQuery('.centerheader').insertAfter('.search-box');
 jQuery ('.homelogolink, .centerheader').removeClass('col-md-4');
@@ -3085,15 +3094,27 @@ jQuery('.centerheader').prepend(chatdiv);
 jQuery('.centerheader').append(reviewdiv);
 	 
 	 jQuery('.page-header-container').delay(300).slideDown(500, function() {
-			 jQuery('.centerheader').delay(2000).effect('bounce',{times:3},400, function() { 
-			 
-			  jQuery('#header-search').delay(2000).effect('bounce',{times:9},700);
-			 });
-			 
-			 			
+	 objImg = new Image();
+objImg.src = 'file:///C:/gat-git/gatorvac.github.io/newheader/newheader_files/sales-header.jpg';
+objImg.onload = function() { 
+
+jQuery('#sales-banner').delay(200).slideDown(500, function() {
+jQuery('.homelogolink').delay(1000).effect('bounce',{times:2},600);
+jQuery('#header-search').delay(1200).effect('bounce',{times:2},600);
+jQuery('.centerheader').delay(1400).effect('bounce',{times:2},600);
+jQuery('#salestimer').delay(500).slideDown(1000);
+
+}); 
+
+};
+	 
+
+
+
+
 		});
- 
-//});
+
+
 
 function sameHeight(selector) {
             var heights = new Array();
