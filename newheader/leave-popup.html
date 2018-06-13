@@ -4045,26 +4045,18 @@ function sameHeight(selector) {
 // ]]></script>
 
 
+
+
+
+
+
+
+
+
 <style>
-#bio_ep {
-    padding: 10px 5px 40px 5px;}
-		
-		#bio_ep_close{
-		    position: absolute;
-    left: 100%;
-    margin: -7px 0px 4px -24px;
-    width: 21px;
-    height: 22px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 50%;
-    background-color: #5c5c5c;
-    cursor: pointer;
-}
 
 </style>
+
 
 <script>
 
@@ -4162,9 +4154,9 @@ window.bioEp = {
 
 		// Base CSS styles for the popup
 		var css = document.createTextNode(
-			"#bio_ep_bg {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; opacity: 0.3; z-index: 10001;}" +
+			"#bio_ep_bg {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; opacity: 0.5; z-index: 10001;}" +
 			"#bio_ep {display: none; position: fixed; width: " + this.width + "px; height: " + this.height + "px; font-family: 'Titillium Web', sans-serif; font-size: 16px; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); -webkit-transform: translateX(-50%) translateY(-50%); -ms-transform: translateX(-50%) translateY(-50%); background-color: #fff; box-shadow: 0px 1px 4px 0 rgba(0,0,0,0.5); z-index: 10002;}" +
-			"#bio_ep_close {position: absolute; left: 100%; margin: -8px 0 0 -12px; width: 20px; height: 20px; color: #fff; font-size: 12px; font-weight: bold; text-align: center; border-radius: 50%; background-color: #5c5c5c; cursor: pointer;}" +
+			"" +
 			this.css
 		);
 
@@ -4379,18 +4371,96 @@ window.bioEp = {
 
 </script>
 
-
-
 <script type="text/javascript">
-var pophtml = '<div id="content"><h2>Please Don\'t Leave! We will GIVE you a new vacuum for Free!</h2></div>';
-pophtml +='<iframe src="https://mailchi.mp/thinkvacuums/thankyou" height="100%" width="100%">';
-pophtml +='</div>';
+var pophtml = '<div id="popcontent"><img class="stop" src="https://www.thinkvacuums.com/media/wysiwyg/stopsmall.png"><h2>Can\'t Find What You Need?</h2><img class="stop stopright" src="https://www.thinkvacuums.com/media/wysiwyg/stopsmall.png">';
+
+pophtml +='<div class="popincontent">';
+//pophtml +='<h3>Can\'t Find What You Need?</h3>';
+pophtml +='<p class="popline1">Speak to a Real Vacuum Expert Now!</p>';
+pophtml +='<p class="popphone">1-800-322-2965</p>';
+pophtml +='<p class="poplineget">Call us now, mention code "TV5" <br/>& Get 5% Off Your First Order!</p>';
+pophtml +='<img src="https://www.thinkvacuums.com/media/wysiwyg/chatgirl3.png" class="chatgrl">';
+pophtml +='<img src="https://www.thinkvacuums.com/media/wysiwyg/happy.png" class="customer">';
+pophtml +='<p class="popline3">We are 30 Years in Business.</p>';
+pophtml +='<p class="popline4">We Know Vacuums. We Think Vacuums.</p>';
+pophtml +='<img src="https://www.thinkvacuums.com/media/wysiwyg/logo-reversed.png">';
+
+
+
+//pophtml +='<iframe src="https://mailchi.mp/thinkvacuums/thankyou" height="100%" width="100%">';
+pophtml +='</div></div>';
     bioEp.init({
  html: pophtml,
     css: '#content {font-size: 20px;}',
 		cookieExp: 0
     });
 </script>
+
+
+<style>
+#bio_ep {
+    padding: 10px 5px 40px 5px;}
+		
+#popcontent {height:100%;
+position:relative;}
+
+#popcontent img.stop{position:absolute;left:50px;
+top:-7px;
+height:50px;}
+
+#popcontent img.stopright {right:-390px;}
+#popcontent h2{text-align:center;font-size:28px;
+color:#000000;}
+
+.popincontent h3{color:#ffff00;font-size:30px;padding-top:15px;}
+
+.popincontent {display:block;
+background:#3366bb;height:95%;text-align:center;
+color:#ffffff;font-size:30px;}
+
+
+.popincontent .popline1 {font-size:28px;padding-top:15px;margin:0px;}
+
+.popincontent .popphone {font-size:42px;color:#ffff99;
+font-weight:bold;margin:0px 0px 0px 0px; padding:0px}
+
+
+.popincontent .poplineget {font-size:22px;
+color:#aaffaa;line-height:1em;
+margin-top:15px;}
+
+.popline3 {margin-top:50px !important;}
+.popincontent .popline3,
+.popincontent .popline4 {font-size:20px;
+padding:0px;margin:0px;line-height:1em;
+color:#ffff00;}
+
+#bio_ep{border-radius:10px;}
+
+#bio_ep_close {
+    position: absolute;
+    top: -10px;
+    right: -10px !important;
+    margin: 0;
+    width: 32px;
+    height: 33px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #5c5c5c;
+border:solid 2px;
+    cursor: pointer;
+    }
+
+#bio_ep_close:hover{background:#339933;}
+
+img.chatgrl,img.customer {position:absolute;
+width:120px;top:150px;left:10px}
+img.customer {right:-450px;top:140px;}
+</style>
+
 
 
 
